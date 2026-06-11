@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestGroup</title>
+    <link rel="stylesheet" href="./CSS/BestGroup.css">
+</head>
+<body>
+    <svg id="circuit"></svg>
+    <div id="toolBox">
+        <div class="groupCircle" draggable="true">グループを作る</div>
+        <div class="difficultySelector">
+            <label for="difficulty">難易度を選ぶ:</label>
+            <select id="difficulty">
+                <option value="easy" selected>簡単</option>
+                <option value="normal">普通</option>
+                <option value="hard">難しい</option>
+            </select>
+            <button id="startGame">ゲームスタート</button>
+        </div>
+    </div>
+    <button id="executeScore" onclick="document.getElementById('tableGroup').style.display='block'">実行する</button>
+    <button id="showTable" onclick="document.getElementById('tableGroup').style.display='block'">表を見る</button>
+    <div id="tableGroup" style="display: none;">
+        <button onclick="document.getElementById('tableGroup').style.display='none'">閉じる</button>
+        <table id="scoreTable"></table>
+    </div>
+    <button onclick="document.getElementById('rule').style.display='block'">ルール説明</button>
+    <div id="rule" style="display: none;">
+        <button onclick="document.getElementById('rule').style.display='none'">閉じる</button>
+        <p>ゲームの説明</p>
+        <p>・彼らはシャリのアルバイト君たちです</p>
+        <p>・彼らには性格が3種類あります</p>
+        <p>・しかしその性格は見た目では判断できません</p>
+        <p>・あなたにはこのシャリのアルバイターたちをグループわけをしてもらいます</p>
+        <p>・同じ性格のシャリたちが集まれば高いスコアが出ます</p>
+        <p>・ただ、一人だけスパイがいます</p>
+        <p>・スパイがいるグループは0点になってしまいます</p>
+        <p>・グループは「グループを作る」をドラッグアンドドロップで作れます</p>
+        <p>・グループは縁を右クリックで消せます</p>
+        <img src="img/動かせるグループ.png" width = "350px" height="200px">
+        <img src="img/実行の仕方.png" width="350px" height="200p">
+        <p>・円の中にいるアルバイターはグループメンバーとしてカウントされますが、そうでないアルバイターはスコアに影響を及ぼしません</p>
+        <img src="img/理想形.png" width="350px" height="200px">
+        <p>・各グループの得点の計算は以下の通りです</p>
+        <p>　　2の(グループ内で一番多い性格の人数 - 1)乗（ただし0人のグループは0点）</p>
+        <p>・各グループの得点の合計がその日の得点になります</p>
+    </div>
+    <button onclick="window.location.href = '../../index.html'">終了する</button>
+    <script src="./Js/Collection.js" defer></script>
+    <script src="./Js/BestGroup.js" defer></script>
+</body>
+</html>

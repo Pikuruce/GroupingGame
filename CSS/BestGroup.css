@@ -1,0 +1,58 @@
+body {
+    font-family: sans-serif;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(83, 42, 0);
+}
+
+#circuit {
+    background-color: rgb(138, 62, 0);
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 500px;
+    border: 1px solid #000;
+}
+
+.groupCircle {
+    cursor: grab;
+    user-select: none;
+    margin: 5px 0;
+    background-color: #ffe;
+    padding: 4px 8px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    width: 120px;
+}
+
+#scoreTable {
+    margin-left: 20px;
+    background-image: url('../img/基盤.png');
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#rule {
+    background-color: rgba(0, 255, 255, 0.727);
+}
+
+#toolBox {
+    width: 100vw;
+    display: flex;
+}
+
+.difficultySelector {
+    cursor: grab;
+    user-select: none;
+    margin-left: auto;
+    background-color: #ffe;
+    padding: 4px 8px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    width: 300px;
+}
