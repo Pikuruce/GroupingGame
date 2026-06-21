@@ -110,8 +110,8 @@ Major features:
 ## Project Structure
 
 ```text
-BestGroup/
-├── BestGroup.html
+GroupingGame/
+├── index.html
 ├── CSS/
 ├── Js/
 ├── img/
