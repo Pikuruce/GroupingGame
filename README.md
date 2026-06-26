@@ -1,83 +1,83 @@
 # GroupingGame
 
-## Overview
+## 概要
 
-**Best Group** is a puzzle game where players organize workers into groups based on hidden personality types.
+**Best Group**は、隠された性格タイプに基づいて作業員をグループ分けするパズルゲームです。
 
-Each worker belongs to one of three personality types, but their personalities are invisible. Your goal is to infer these types by observing the score obtained from different groupings.
+各作業員はいずれか3つの性格タイプのいずれかに属していますが、その性格は外見からは分かりません。さまざまな組み合わせでグループを作り、その結果得られるスコアをヒントに、それぞれの性格タイプを推測するのが目的です。
 
-Be careful—one worker is a **spy**. Any group containing the spy scores **0 points**.
-
----
-
-## Features
-
-* Drag and drop to create groups
-* Move group circles freely
-* Automatically calculate scores
-* Hidden information deduction puzzle
-* Multiple difficulty levels
-* Score history table
-* Secret difficulty unlock
+ただし注意が必要です。作業員の中には**スパイ**が紛れ込んでいます。スパイが含まれるグループのスコアは**0点**になってしまいます。
 
 ---
 
-## How to Play
+## 特徴
 
-1. Select a difficulty and start the game.
-2. Drag **"Create Group"** onto the field to create a new group.
-3. Move the circles so workers are inside or outside each group.
-4. Press **Execute** to calculate the day's score.
-5. Repeat until all turns are used.
-6. At the end of the game, the workers' personality types are revealed.
+* ドラッグ＆ドロップでグループを作成
+* グループの円を自由に移動可能
+* スコアの自動計算機能
+* 隠された情報を推測するパズル要素
+* 複数の難易度設定
+* スコア履歴の表示
+* 隠し難易度のアンロック機能
 
 ---
 
-## Rules
+## 遊び方
 
-* Every worker belongs to one of **three personality types**.
-* Personality types cannot be identified by appearance.
-* One worker is a **spy**.
-* Any group containing the spy receives **0 points**.
-* Workers outside every group do not affect the score.
+1. 難易度を選んでゲームを開始します。
+2. **「グループ作成 (Create Group)」**をフィールドにドラッグして、新しいグループを作成します。
+3. 円を動かして、各グループの内側または外側にワーカーを配置します。
+4. **「実行 (Execute)」**を押して、その日のスコアを計算します。
+5. すべてのターンを終えるまで繰り返します。
+6. ゲーム終了時に、ワーカーの性格タイプが明かされます。
 
-The score for each group is calculated as
+---
+
+## ルール
+
+* すべてのワーカーは**3つの性格タイプ**のいずれかに属しています。
+* 性格タイプは見た目では判別できません。
+* ワーカーのうち1人は**スパイ**です。
+* スパイを含むグループのスコアは**0点**になります。
+* どのグループにも属さないワーカーは、スコアに影響しません。
+
+各グループのスコアは以下の式で計算されます。
 
 ```text
-2^(largest number of workers sharing the same personality − 1)
+2^(同じ性格を持つワーカーの最大数 − 1)
 ```
 
-If the group contains no workers, its score is **0**.
+ワーカーが1人も含まれないグループのスコアは**0**です。
 
-The final score for a day is the sum of all group scores.
+その日の最終スコアは、すべてのグループのスコアの合計となります。
 
 ---
 
-## Controls
+## 操作方法
 
-| Action              | Description           |
+| アクション            | 説明                  |
 | ------------------- | --------------------- |
-| Drag "Create Group" | Create a new group    |
-| Drag a group        | Move the group        |
-| Drag a worker       | Move a worker         |
-| Right-click a group | Delete the group      |
-| Execute             | Calculate the score   |
-| Show Table          | Display score history |
+| 「Create Group」をドラッグ | 新しいグループを作成する |
+| グループをドラッグ      | グループを移動する      |
+| ワーカーをドラッグ      | ワーカーを移動する      |
+| グループを右クリック    | グループを削除する      |
+| 実行 (Execute)      | スコアを計算する        |
+| 表を表示 (Show Table) | スコア履歴を表示する    |
 
 ---
 
-## Difficulty Levels
+## 難易度
 
-| Difficulty | Workers | Turns |
-| ---------- | ------: | ----: |
-| Easy       |       6 |     7 |
-| Normal     |       8 |    10 |
-| Hard       |      10 |    15 |
-| Hidden     |      15 |    20 |
+| 難易度     | ワーカー数 | ターン数 |
+| ---------- | --------: | ------: |
+| Easy       |         6 |       7 |
+| Normal     |         8 |      10 |
+| Hard       |        10 |      15 |
+| Hidden     |        15 |      20 |
 
 ---
 
-## Technologies
+## 使用技術
 
 * HTML
 * CSS
@@ -86,28 +86,28 @@ The final score for a day is the sum of all group scores.
 
 ---
 
-## Implementation
+## 実装
 
-This project was implemented using object-oriented JavaScript.
+本プロジェクトは、オブジェクト指向JavaScriptを用いて実装されています。
 
-Main classes include:
+主なクラス:
 
 * `GameMap`
 * `Human`
 * `GroupCircle`
 
-Major features:
+主な機能:
 
-* SVG-based rendering
-* Drag-and-drop interaction
-* Collision detection using circle distance
-* Automatic score calculation
-* Dynamic table generation
-* Difficulty selection using URL parameters
+* SVGベースのレンダリング
+* ドラッグ＆ドロップによる操作
+* 円の距離を用いた衝突判定
+* 自動スコア計算
+* 動的な表の生成
+* URLパラメータによる難易度選択
 
 ---
 
-## Project Structure
+## プロジェクト構成
 
 ```text
 GroupingGame/
@@ -120,8 +120,8 @@ GroupingGame/
 
 ---
 
-## Future Improvements
+## 今後の改善点
 
-* Additional game modes
-* Random stage generation
-* Improved UI animations
+* ゲームモードの追加
+* ステージのランダム生成
+* UIアニメーションの改善
